@@ -26,7 +26,7 @@ const UserList = ({
 
 
       <FlatList
-        data={name}
+        data={userConnection}
         renderItem={renderItem}
         keyExtractor={item => `${item.id}`}
       />
