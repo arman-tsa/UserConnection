@@ -28,12 +28,11 @@ const TextInputContainer = ({
 
     const usearch = userConnection.filter((item) => {
       // return item.firstname.toLowerCase().match(lowerCase);
-      if (item.firstname.toLowerCase().match(lowerCase)) {
-        return item.firstname.toLowerCase().match(lowerCase);
-
+      if (item.firstname.toLowerCase().includes(lowerCase) || item.company.toLowerCase().includes(lowerCase) || item.email.toLowerCase().includes(lowerCase)) {
+        return true;
       }
       else if (item.surname.toLowerCase().match(lowerCase)) {
-        return item.surname.toLowerCase().match(lowerCase);
+        return true;
       }
       else {
         return false
