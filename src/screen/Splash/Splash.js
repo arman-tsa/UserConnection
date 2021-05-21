@@ -30,7 +30,6 @@ const Splash = ({
     try {
       const response = (await Axios.get('https://run.mocky.io/v3/e6daf7f7-9ec2-42cf-b221-ef64f1c0c6a5')).data;
       dispatch(UserACtion.setUserConnectionData(response));
-      dispatch(UserACtion.setName(response));
       saveIntoAsyncStorage(response);
     } catch (error) {
       console.log("[Splash],getConnectionUser", error);
@@ -43,16 +42,13 @@ const Splash = ({
     try {
       const data = await AsyncStorage.getItem("users");
       if (data !== null) {
-        console.log("checkUserIntoAsyncStorageAndSetToRedux", data);
         dispatch(UserACtion.setUserConnectionData(JSON.parse(data)));
-        dispatch(UserACtion.setName(JSON.parse(data)));
         navigation.dispatch(resetStack);
       }
       else {
         getConnectionUser();
       }
     } catch (error) {
-      console.log("[checkUserIntoAsyncStorageAndSetToRedux]", error);
     }
   }
 
@@ -69,9 +65,9 @@ const Splash = ({
 
 
   React.useEffect(() => {
-    // setTimeout(() => {
-    checkUserIntoAsyncStorageAndSetToRedux();
-    // }, 2000)
+    setTimeout(() => {
+      checkUserIntoAsyncStorageAndSetToRedux();
+    }, 2000)
   }, []);
 
   return (

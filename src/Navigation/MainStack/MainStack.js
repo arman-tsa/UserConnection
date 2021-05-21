@@ -10,6 +10,7 @@ import Splash from '../../screen/Splash/Splash';
 import UserList from '../../screen/UserList/UserList';
 import { store } from '../../Redux/store/store';
 import { Provider } from 'react-redux';
+import Profile from '../../screen/Profile/Profile';
 
 enableScreens();
 
@@ -30,6 +31,7 @@ const MainStack = ({
         >
           <stack.Screen name={ScreenNames.SPLASH} component={Splash} />
           <stack.Screen name={ScreenNames.USER_LIST} component={UserList} />
+          <stack.Screen name={ScreenNames.PROFILE} component={Profile} />
 
         </stack.Navigator>
       </NavigationContainer>

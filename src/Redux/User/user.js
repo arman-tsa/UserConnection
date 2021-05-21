@@ -3,7 +3,6 @@ import * as ActionTypes from '../actionTypes/actionTypes';
 
 const initialState = {
   userConnection: [],
-  name: undefined
 };
 
 const user = (state = initialState, action) => {
@@ -16,13 +15,6 @@ const user = (state = initialState, action) => {
       return {
         ...state,
         userConnection: payload,
-      };
-    }
-
-    case ActionTypes.NAME: {
-      return {
-        ...state,
-        name: payload,
       };
     }
 

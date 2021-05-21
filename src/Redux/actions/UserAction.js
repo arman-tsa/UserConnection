@@ -5,7 +5,3 @@ export const setUserConnectionData = (payload) => ({
   payload: payload
 });
 
-export const setName = (name) => ({
-  type: actionTypes.NAME,
-  payload: name
-});
