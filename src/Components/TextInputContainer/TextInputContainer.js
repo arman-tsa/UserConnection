@@ -31,7 +31,7 @@ const TextInputContainer = ({
     });
     setListOfUser(usearch);
   }
-
+  console.log("===>>>>>>>>>>>>", listOfUser.length, typeof listOfUser);
   const sortBtnPress = () => {
 
     if (sortingOrder.length === 0 || sortingOrder === "descending") {

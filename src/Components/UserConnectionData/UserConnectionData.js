@@ -23,7 +23,7 @@ const UserConnectionData = ({
   const navigation = useNavigation();
 
   const navigateToProfile = () => {
-    navigation.navigate(ScreenNames.PROFILE);
+    navigation.navigate(ScreenNames.PROFILE, { company: company, name: fname + " " + surname });
   }
 
 
