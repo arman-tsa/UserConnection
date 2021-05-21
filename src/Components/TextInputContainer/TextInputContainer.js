@@ -27,11 +27,21 @@ const TextInputContainer = ({
     let lowerCase = text.toLowerCase();
 
     const usearch = userConnection.filter((item) => {
-      return item.firstname.toLowerCase().match(lowerCase);
+      // return item.firstname.toLowerCase().match(lowerCase);
+      if (item.firstname.toLowerCase().match(lowerCase)) {
+        return item.firstname.toLowerCase().match(lowerCase);
+
+      }
+      else if (item.surname.toLowerCase().match(lowerCase)) {
+        return item.surname.toLowerCase().match(lowerCase);
+      }
+      else {
+        return false
+      }
+
     });
     setListOfUser(usearch);
   }
-  console.log("===>>>>>>>>>>>>", listOfUser.length, typeof listOfUser);
   const sortBtnPress = () => {
 
     if (sortingOrder.length === 0 || sortingOrder === "descending") {
@@ -56,7 +66,6 @@ const TextInputContainer = ({
       <SvgAnimation
         Iconame={"search"}
         color="black"
-      // onPress={onpress}
       />
       <TextInput
         placeholder="Search"

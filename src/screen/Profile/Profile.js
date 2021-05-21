@@ -29,7 +29,7 @@ const Profile = ({
   }
   const translateToDown = slideDown.interpolate({
     inputRange: [0, 1],
-    outputRange: [-(windowHeight), 0]
+    outputRange: [-(windowHeight / 2), 0]
   });
 
 
